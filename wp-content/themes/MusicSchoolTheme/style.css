@@ -1,0 +1,510 @@
+/*
+Theme Name: Music School Theme
+Author: Matt Sparkman
+Description: A custom WordPress theme made by Matthew Sparkman.
+Version: 0.01
+*/
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+  overflow-x: hidden;
+}
+
+.site-header {
+  background-color: #1a1c1f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  height: 60px;
+}
+
+.site-header h1 {
+  font-size: 24px;
+}
+
+.site-header .desktop-nav {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.site-header .desktop-nav li {
+  margin-right: 20px;
+}
+
+.site-header ul li a {
+  text-decoration: none;
+  color: #eaeaea;
+  transition: ease 0.2s;
+  font-weight: 600;
+}
+
+.site-header .desktop-nav li a:hover {
+  color: var(--primary);
+}
+
+.mobile-nav {
+  display: none;
+  list-style: none;
+  padding: 0;
+  background: #2a2d33;
+  position: absolute;
+  top: 44px;
+  right: 0;
+  width: 100%;
+  height: calc(100vh - 60px);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: -100px;
+  z-index: 9999;
+}
+
+.mobile-nav li {
+  margin-bottom: 100px;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease 0.2s;
+}
+.mobile-nav li:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.mobile-nav li a {
+  transition: ease 0.2s;
+  font-size: 20px;
+}
+
+.mobile-nav li a:hover {
+  color: var(--primary);
+}
+
+.mobile-nav.open {
+  display: flex;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+  display: none;
+  width: 24px;
+  height: 3px;
+  background-color: #eaeaea;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.site-footer {
+  background-color: #1a1c1f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+}
+
+.site-footer .links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px 20px;
+}
+.site-footer .socials {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px 20px;
+}
+
+.site-footer ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 0px 20px;
+  row-gap: 20px;
+}
+
+.site-footer ul li a {
+  text-decoration: none;
+  color: #eaeaea;
+  transition: ease 0.2s;
+  font-weight: 600;
+}
+
+.site-footer ul li a:hover {
+  color: var(--primary);
+}
+
+.site-footer .copyright {
+  text-align: center;
+}
+
+.site-footer .copyright p {
+  color: #eaeaea;
+}
+
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+.error-container h1 {
+  font-size: 100px;
+}
+
+.backbtn {
+  text-decoration: none;
+  background-color: #eaeaea;
+  color: #eaeaea;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: #1a1c1f;
+  margin-top: 20px;
+  transition: ease 0.2s;
+}
+.backbtn:hover {
+  background-color: #1a1c1f;
+  color: #eaeaea;
+}
+
+.home-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 100px 0;
+  padding: 10px;
+}
+
+.home-wrapper p {
+  font-size: 20px;
+  color: #eaeaea;
+  margin-top: 20px;
+  padding: 0 60px;
+  text-align: center;
+}
+
+.home-wrapper h1 {
+  font-size: 36px;
+  color: #eaeaea;
+  margin-bottom: 20px;
+}
+
+.home-wrapper h2 {
+  color: #dbae44;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.home-wrapper h1 span {
+  color: #dbae44;
+  text-decoration: underline;
+}
+
+.home-hero {
+  width: 60%;
+  height: 60%;
+  margin: 0 auto;
+  border-radius: 20px;
+  border: 2px solid #dbae44;
+}
+
+.lessons-hero {
+  background-image: url(/wp-content/themes/MusicSchoolTheme/assets/images/lessons-hero.png);
+  height: 300px;
+  width: 600px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 20px;
+  border: 2px solid #dbae44;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.lessons-hero p {
+  color: #eaeaea;
+  font-size: 24px;
+  font-weight: 600;
+  text-shadow: 100px 100px 100px #000000;
+}
+
+.instructor-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  row-gap: 40px;
+}
+
+.instructor-box,
+.instructor-box2,
+.instructor-box3 {
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 340px;
+  height: 500px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.instructor-box {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(/wp-content/themes/MusicSchoolTheme/assets/images/instruc1.jpg);
+}
+
+.instructor-box2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(/wp-content/themes/MusicSchoolTheme/assets/images/instruc2.jpg);
+}
+
+.instructor-box3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(/wp-content/themes/MusicSchoolTheme/assets/images/instruc3.jpg);
+}
+
+.instructor-box:hover h3,
+.instructor-box2:hover h3,
+.instructor-box3:hover h3 {
+  opacity: 1;
+}
+
+.instructor-box h3,
+.instructor-box2 h3,
+.instructor-box3 h3 {
+  transition: ease 0.2s;
+  color: #eaeaea;
+  opacity: 0;
+  font-size: 30px;
+}
+
+.testimonial-box {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 80%;
+  margin: 10px auto 30px auto;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+@media (max-width: 870px) {
+  .site-footer {
+    flex-direction: column;
+    row-gap: 60px;
+  }
+}
+
+.lessons {
+  margin: 60px auto;
+  text-align: center;
+  color: #dbae44;
+}
+
+.lessons-wrapper {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.lesson-box {
+  margin: 80px auto;
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.lesson-box p {
+  color: #dbae44;
+}
+
+.lesson-box h3 {
+  margin: 0;
+  color: #dbae44;
+}
+
+.lesson-box .info {
+  color: #eaeaea;
+  font-size: 14px;
+}
+
+.lesson-box video {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.instructor-page-box,
+.instructor-page-box2,
+.instructor-page-box3 {
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 340px;
+  height: 500px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.instructor-page-box {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(/wp-content/themes/MusicSchoolTheme/assets/images/instruc1.jpg);
+}
+
+.instructor-page-box2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(/wp-content/themes/MusicSchoolTheme/assets/images/instruc2.jpg);
+}
+
+.instructor-page-box3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(/wp-content/themes/MusicSchoolTheme/assets/images/instruc3.jpg);
+}
+
+.instructor-page-box:hover h3,
+.instructor-page-box2:hover h3,
+.instructor-page-box3:hover h3 {
+  opacity: 1;
+}
+
+.instructor-page-box h3,
+.instructor-page-box2 h3,
+.instructor-page-box3 h3 {
+  transition: ease 0.2s;
+  color: #eaeaea;
+  opacity: 0;
+  font-size: 30px;
+}
+
+.ins-wrapper {
+  width: 80%;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 30px 20px 20px 20px;
+  border-radius: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ins-wrapper h2 {
+  text-align: center;
+  margin: 30px 0;
+  font-size: 24px;
+}
+
+.ins-wrapper h3 {
+  font-size: 24px;
+}
+
+.ins-wrapper p {
+  color: #eaeaea;
+  margin: 60px 0;
+}
+
+.ins-wrapper p strong {
+  color: #4473db;
+}
+
+.ins-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.ins-contact input {
+  width: 310px;
+  height: 40px;
+}
+
+.ins-contact textarea {
+  width: 310px;
+  height: 160px;
+}
+
+.ins-contact textarea,
+.ins-contact input {
+  margin: 30px 0;
+  border-radius: 24px;
+  padding: 4px;
+  font-size: 18px;
+}
+
+.ins-contact .submitbtn {
+  cursor: pointer;
+  background-color: #4473db;
+  border: 1px solid #1a1c1f;
+  color: #eaeaea;
+  transition: ease 0.2s;
+}
+
+.ins-contact .submitbtn:hover {
+  background-color: #eaeaea;
+  color: #4473db;
+}
+
+.infore {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .home-wrapper {
+    padding: 0;
+  }
+  .site-header .desktop-nav {
+    display: none !important;
+  }
+  .site-header h1 {
+    font-size: 20px;
+  }
+  .mobile-menu-toggle {
+    display: block !important;
+  }
+  .mobile-menu-toggle span {
+    display: block !important;
+  }
+  .home-hero {
+    width: 90%;
+    height: 50%;
+  }
+  .home-wrapper h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+  .lessons-hero {
+    width: 340px;
+  }
+  .lesson-box {
+    width: 100%;
+    margin: 50px 0 80px -20px;
+    padding: 20px;
+  }
+}
